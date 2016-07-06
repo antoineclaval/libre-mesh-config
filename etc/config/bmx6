@@ -1,0 +1,49 @@
+
+config bmx6 'general'
+	option dbgMuteTimeout '1000000'
+	option tunOutTimeout '0'
+
+config tunDev 'main'
+	option tunDev 'main'
+	option tun4Address '10.138.21.117/24'
+	option tun6Address 'FDDF:CA8A:15AD:0:0:0:A3:B575/64'
+
+config plugin 'config'
+	option plugin 'bmx6_config.so'
+
+config plugin 'json'
+	option plugin 'bmx6_json.so'
+
+config ipVersion 'ipVersion'
+	option ipVersion '6'
+
+config tunOut 'nodes'
+	option tunOut 'nodes'
+	option network '172.16.0.0/12'
+
+config tunOut 'clouds'
+	option tunOut 'clouds'
+	option network '10.0.0.0/8'
+
+config tunOut 'inet4'
+	option tunOut 'inet4'
+	option network '0.0.0.0/0'
+	option maxPrefixLen '0'
+
+config tunOut 'inet6'
+	option tunOut 'inet6'
+	option network '::/0'
+	option maxPrefixLen '0'
+
+config tunOut 'publicv6'
+	option tunOut 'publicv6'
+	option network '2000::/3'
+	option maxPrefixLen '64'
+
+config dev 'lm_eth0_bmx6_if'
+	option dev 'eth0_13'
+
+config dev 'lm_wlan0_adhoc_bmx6_if'
+	option dev 'wlan0-adhoc_13'
+	option rateMax '54000'
+

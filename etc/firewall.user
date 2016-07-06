@@ -1,0 +1,6 @@
+# Put your custom iptables rules in a new file in /etc/firewall.user.d/
+# they will be executed with each firewall (re-)start.
+# They are interpreted as shell script.
+for hook in /etc/firewall.user.d/* ; do
+	[ -s "$hook" ] && /bin/sh "$hook"
+done
